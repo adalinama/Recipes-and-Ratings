@@ -28,7 +28,7 @@ Recipes: Information found on [food.com](food.com)
 
 | **Column Name**     | **Definition**                                    |
 | ------------------- | ------------------------------------------------------------ |
-| `name’            | Recipe name                                         |
+| `name`            | Recipe name                                         |
 | `id`  | Recipe ID |
 | `minutes`          | Minutes to prepare recipe              |
 | `contributor_id`             | User ID who submitted this recipe                                      |
