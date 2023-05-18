@@ -131,3 +131,17 @@ By calculating the correlation coefficient and comparing it to the null hypothes
 
 It is worth noting that correlation does not imply causation, and other factors might affect the ratings of recipes apart from cooking time. Therefore, further investigation would be necessary to determine the causal relationship between cooking time and the average rating of recipes.
 
+## Assessment of Missingness
+
+### NMAR Analysis
+Using a permutation test, we can assume that the missing values in ‘rating’ are not missing at random (NMAR). There is no apparent pattern as to why the values are missing, the missingness is dependent on the missing value itself. A user may have simply forgotten to add a rating when writing a review. This means the missing data depends on the actual value of the missing point, making the missingness to be NMAR. To make the values of ‘ratings’ MAR, collecting more data related to the missingness mechanism such as obtaining the demographic of users could be a factor that explains the missingness in the ‘rating’ column. By collecting additional variables and if they are present for both missing and not missing ‘rating’ values, a permutation test can be used to impute the missing values to examine the correlation between the column values.
+### Missingness Dependency
+When taking a further look at the missing values, we noticed that the columns ‘names’, ‘description’, ‘user_id’, ‘date’, ‘rating’, ‘review’, and ‘avg_rating’ all contain missing values. We decided to investigate whether the missingness of ‘review’ corresponds to the missingness of ‘rating’.
+
+Null Hypothesis: Distribution of `'review'` when `'rating'` is missing is the same as the distribution of `'review'` when `'rating'` is not missing.
+
+Alternative Hypothesis: Distribution of `'review'` when `'rating'` is missing is *not* the same as the distribution of `'review'` when `'rating'` is not missing.
+
+The graph below displays the distribution of `review` when `rating` is and is not missing.
+
+
