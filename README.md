@@ -73,8 +73,7 @@ The first five rows of our dataframe are included below:
 For our univariate analysis, we decided to focus on investigating the distribution if cooking time under 120 minutes. We grouped by` minutes` to see the distribution within our dataset:
 
 <p float = 'left'> 
-    <iframe src="assets/assets/uni-fig-time.html" width=410 height=275 frameBorder=0></iframe>
-<p style="text-align:center"><iframe src="assets/univariate-plots/uni-fig-jng.html" width=410 height=275 align='center' frameBorder=0></iframe></p>
+    <iframe src="assets/uni-fig-time.html" width=410 height=275 frameBorder=0></iframe>
 </p>
 </p>
 
