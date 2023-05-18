@@ -83,4 +83,26 @@ Explanation: The scatter plot displays the relationship between cooking time and
 
 <p style="text-align:center"><iframe src="assets/bivariate-plot-steps.html" width='100%' height=435 align='center' frameBorder=0></iframe></p>
 
+### Interesting Aggregates
+
+
+|   count |   unique | top                       |   freq |
+|--------:|---------:|:--------------------------|-------:|
+|    2730 |     1379 | [5.0, 5.0, 5.0, 5.0, 5.0] |    265 |
+|    3154 |     1771 | [5.0, 5.0, 5.0, 5.0, 5.0] |    270 |
+|    2637 |     1611 | [5.0, 5.0, 5.0, 5.0, 5.0] |    204 |
+|    2380 |     1511 | [5.0, 5.0, 5.0, 5.0, 5.0] |    196 |
+
+Description:
+
+|   Count |
+|--------:|
+|       1 |
+|       0 |
+|      16 |
+|     190 |
+|    2683 |
+
+Description:
+
 
