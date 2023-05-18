@@ -105,4 +105,29 @@ Description:
 
 Description:
 
+## Hypothesis Testing
+After conducting our exploratory data analysis, does the cooking time of a recipe affect the average rating?
+
+**Null hypothesis:** There is no significant correlation between cooking time and average rating of recipes.
+
+**Alternative hypothesis:** There is a significant correlation between cooking time and average rating of recipes.
+- Test statistic: Correlation Coefficient
+- Significance level: 5% (0.05)
+- Impact variables: Minutes, Rating
+
+The correlation coefficient is a measure of the strength and direction of the linear relationship between two variables. In this case, we are interested in determining if there is a significant correlation between cooking time and the average rating of recipes. By using the correlation coefficient as the test statistic, we can quantitatively measure the degree of association between these two variables.
+
+When conducting a hypothesis test, the test statistic should be sensitive to the alternative hypothesis. In this scenario, the alternative hypothesis suggests that there is a significant correlation between cooking time and average rating. By using the correlation coefficient as the test statistic, we can assess the strength and direction of this relationship.
+
+Furthermore, the correlation coefficient is a widely used and recognized measure for examining the association between continuous variables. It ranges from -1 to +1, where -1 indicates a perfect negative correlation, +1 indicates a perfect positive correlation, and 0 indicates no correlation. The magnitude of the correlation coefficient indicates the strength of the relationship, while its sign indicates the direction of the relationship.
+
+By calculating the correlation coefficient and comparing it to the null hypothesis of no correlation, we can determine if there is evidence to support the alternative hypothesis that there is a significant correlation between cooking time and average rating.
+
+
+**Results ** 
+- P-value: 0.0
+- Correlation Coefficient: -0.0449
+- Conclusion: We can interpret the results of the hypothesis test as follows: since the p-value obtained (0.0000) is less than the significance level of 0.05, we reject the null hypothesis. This indicates that there is a significant correlation between cooking time and average rating of recipes. Additionally, the correlation coefficient of -0.0449 indicates a weak negative correlation between the two variables, which means that as cooking time increases, the average rating of recipes tends to decrease slightly.
+
+It is worth noting that correlation does not imply causation, and other factors might affect the ratings of recipes apart from cooking time. Therefore, further investigation would be necessary to determine the causal relationship between cooking time and the average rating of recipes.
 
