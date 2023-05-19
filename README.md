@@ -128,9 +128,6 @@ We can learn a lot about the connection between cooking time and ratings by look
 
 In conclusion, the intriguing aggregates explore the descriptive statistics inside quartiles to give a deeper insight of the relationship between cooking time and ratings. This study offers useful information for recipe selection and user preferences by revealing potential correlations or trends between these factors.
 
-
-Description:
-
 ## Assessment of Missingness
 
 ### NMAR Analysis
@@ -155,6 +152,7 @@ We performed a permutation test to determine whether or not the missingness of `
 <p style="text-align:center"><iframe src="assets/n_step_box.html" width='100%' height=425 align='center' frameBorder=0></iframe></p>
 
 The pivot table below illustrates the observed values.
+
 |   bins  |   False  | True     |
 |--------:|---------:|---------:|
 |  (0, 5] | 0.236033 | 0.192338 |   
