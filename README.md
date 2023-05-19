@@ -97,7 +97,7 @@ We then were able to make the decision of filtering out recipes that exceeded 12
 
 Explanation: The scatter plot displays the relationship between cooking time and the average rating of recipes. It helps identify any correlation or patterns between these variables.
 
-<p style="text-align:center"><iframe src="assets/bivariate-plot-steps.html" width='100%' height=435 align='center' frameBorder=0></iframe></p>
+
 
 ### Interesting Aggregates
 
