@@ -196,7 +196,5 @@ We may ascertain whether there is evidence to support the alternative hypothesis
 
 It is important to remember that correlation does not indicate causation, and that factors other than cooking time may have an impact on how well a recipe is rated. Therefore, more research would be required to establish the causal link between cooking time and recipe average ratings.
 
-## Hypothesis Testing
-Based on the results of the exploratory data analysis and hypothesis tests conducted in this project, we identified potential key variables that could be used to build a predictive model that predicts a player’s role based on their game statistics in a separate project. 
-
-
+## Conclusion
+Through this project, we took 2 datasets, merged them, cleaned them and analyzed them. We explored what we learned in lecture by performing univariate analyses and bivariate analyses and aggression, explored NMAR values, and tested for missingness. To answer our main question, (does the cooking time of a recipe affect the average rating?) we performed a hypothesis test. We came conclusion to reject the null hypothesis, meaning there is a significant correlation between cooking time and average rating of recipes.
