@@ -70,11 +70,18 @@ The first five rows of our dataframe are included below:
  693373.0, 646093.0, 765161.0, 879045.0, 872425.0, 213139.0, 299046.0, 1383715.0, 308765.0, 1993336.0]</td>      <td>[4.0, 4.0, 4.0, 4.0, 4.0, 5.0, 4.0, 5.0, 1.0, 4.0, 5.0]</td>      <td>20</td>      <td>4.0</td>      <td>2</td>    <td>584365</td>    </tr>    <tr>      <th>3</th>      <td>10 calorie chocolate miracle noodle cookies</td>      <td>478546</td>      <td>[2249984.0, 1802657711.0, 2000301575.0, 2000920973.0, 2001773359.0]</td>      <td>[3.0, 3.0, 4.0, nan, nan]</td>      <td>26</td>      <td>3.3333333333333335</td>      <td>16</td>    <td>2247203</td>    </tr>    <tr>      <th>4</th>      <td>10 minute baked halibut with garlic butter sauce</td>      <td>359203</td>      <td>[4470.0, 90633.0, 653438.0, 369715.0, 242188.0, 1800042302.0, 1803231273.0]</td>      <td>[5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0]</td>      <td>16</td>      <td>5.0</td>      <td>35</td>   <td>37779</td>    </tr>  </tbody></table>
 
 ### Univariate Analysis
-For our univariate analysis, we decided to focus on investigating the distribution if cooking time under 120 minutes. We grouped by` minutes` to see the distribution within our dataset:
+For our univariate analysis, we decided to focus on investigating the distribution if cooking time. We grouped by` minutes` to see the distribution within our dataset:
+
+
+This focuses on how recipes distribute cooking time. We can comprehend the frequency of various cooking time intervals and their distribution throughout the dataset by developing a histogram of cooking time. For example, our original dataset before cleaning informed us of the potential ouliers as shown above.
+
+This analysis is significant since it sheds light on how the recipes' total cooking time is distributed. It enables us to spot any patterns or outliers and understand the normal time of recipes. Planning meals, predicting preparation times, or figuring out which dishes take more or less time are just a few uses for this information. Here is our updated distribution.
 
 <p float = 'left'> 
-    <iframe src="assets/uni-fig-time.html" width=410 height=275 frameBorder=0></iframe>
+    <iframe src="assets/uni-fig-time.html" width='100%' height= 435 align='center' frameBorder=0></iframe>
 </p>
+
+We then were able to make the decision of filtering out recipes that exceeded 120 minutes for a more workable dataset. We can see the distribution's form, the range of cooking durations, and the most typical cooking time intervals from the histogram. It enables us to determine whether the majority of recipes have short or lengthy cooking durations, whether the distribution has any notable peaks or gaps, and whether it is biased towards particular time periods.
 
 ### Bivariate Analysis
 <p style="text-align:center"><iframe src="assets/bivariate-plot-time.html" width='100%' height= 435 align='center' frameBorder=0></iframe></p>
