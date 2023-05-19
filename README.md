@@ -1,4 +1,4 @@
-# Recipes-and-Ratings
+# Recipes and Ratings
 # Does the cooking time of a recipe affect the average rating?
 A UCSD DSC 80 Project testing a dataset to see if cooking times affect the average rating.
 
@@ -17,10 +17,10 @@ Contributors: Jenna Canicosa and Adalina Ma
     - [NMAR Analysis](#nmar-analysis)
     - [Missingness Dependency](#missingness-dependency)
 - [Hypothesis Testing](#hypothesis-testing)
-- [Concluding Note](#concluding-note)
+- [Conclusion](#conclusion)
 
 ## Introduction
-Welcome to Recipe and Ratings Analysis! We used 2 datasets to conduct this analysis, one containing recipes and the other ratings from [Food.com](https://www.food.com/) last updated in 2008. The original recipes dataset held over 83,000 unique recipes and the ratings dataset held over 731,000 recipe reviews. With the large amount of data and information, there were many types of approaches to this project. **We decided to conduct our data analysis on checking if there is a correlation between cooking time and recipe ratings.** 
+Welcome to Recipe and Ratings Analysis! We used 2 datasets to conduct this analysis, one containing recipes and the other ratings from [Food.com](https://www.food.com/) which was last updated in 2008. Bodhisattwa Prasad Majumder, Shuyang Li, Jianmo Ni, and Julian McAuley originally scraped and used this data. The original recipes dataset held over 83,000 unique recipes and the ratings dataset held over 731,000 recipe reviews. With the large amount of data and information, there were many types of approaches to this project. **We decided to conduct our data analysis on checking if there is a correlation between cooking time and recipe ratings.** 
 
 ### Dataset Statistics and Definitions:
 As stated above, the original recipes dataset has a total of 83,782 unique recipes and the ratings dataset has a total of 731,927 recipe reviews. We merged the two datasets and cleaned it so it only includes the necessary columns for our analysis. Below are the definitions of the columns we used from this dataset.
@@ -56,7 +56,7 @@ Ratings
 ### Data Cleaning
 The first step of our data cleaning process was to merge our two datasets together. We performed a left merge on the recipes and interactions datasets together. 
 
-The second step of our data cleaning process was to fill all ratings of 0 with` np.nan`. We performed this step, because the lowest rating that you can give is one star, so we can automatically assume that if a rating contains zero stars, no rating was given.  
+The second step of our data cleaning process was to fill all ratings of 0 with `np.nan`. We performed this step, because the lowest rating that you can give is one star, so we can automatically assume that if a rating contains zero stars, no rating was given.  
 
 The third step of our data cleaning process was to find the average rating per recipe, as a Series. We grouped by `id` before finding the mean of `ratings`. We made sure to rename the columns to `ratings` and `avg_rating`. After adding this Series containing the average rating per recipe back to the dataset.  
 
@@ -76,13 +76,13 @@ The first five rows of our dataframe are included below:
 
 
 ### Univariate Analysis
-For our univariate analysis, we decided to focus on investigating the distribution if cooking time. We grouped by` minutes` to see the distribution within our dataset:
+For our univariate analysis, we decided to focus on investigating the distribution of cooking time. We grouped by `minutes` to see the distribution within our dataset:
 
 <p float = 'left'> 
     <iframe src="assets/uni-fig-all.html" width='100%' height= 435 align='center' frameBorder=0></iframe>
 </p>
 
-This focuses on how recipes distribute cooking time. We can comprehend the frequency of various cooking time intervals and their distribution throughout the dataset by developing a histogram of cooking time. For example, our original dataset before cleaning informed us of the potential ouliers as shown above.
+This illustrates how recipes distribute cooking time. We can comprehend the frequency of various cooking time intervals and their distribution throughout the dataset by developing a histogram of cooking time. For example, our original dataset before cleaning informed us of the potential ouliers as shown above.
 
 This analysis is significant since it sheds light on how the recipes' total cooking time is distributed. It enables us to spot any patterns or outliers and understand the normal time of recipes. Planning meals, predicting preparation times, or figuring out which dishes take more or less time are just a few uses for this information. Here is our updated distribution.
 
@@ -160,11 +160,11 @@ The pivot table below illustrates the observed values.
 | (10,20] | 0.308405 | 0.336792 |   
 |(20,100] | 0.057427 | 0.090051 |   
 
-The plot below displays the empirical distribution of the TVDs, with our observed TVD marked as a red vertical line.  
+The plot below displays the empirical distribution of the TVDs with our observed TVD marked with red vertical line.  
 
 <p style="text-align:center"><iframe src="assets/empirical_tvd.html" width='100%' height=425 align='center' frameBorder=0></iframe></p>
 
-By running a permutation test by comparing the observed TVD, the p-value result was 0. Since our p-value is less than the significance level of 0.05, it is likely that we reject the null hypothesis. We can assume that the missingness in `recipe` is dependent on `n_steps`.
+By running a permutation test by comparing the observed TVD, the p-value result was 0.0. Since our p-value is less than the significance level of 0.05, it is likely that we reject the null hypothesis. We can assume that the missingness in `recipe` is dependent on `n_steps`.
 
 ## Hypothesis Testing
 After conducting our exploratory data analysis, does the cooking time of a recipe affect the average rating?
@@ -192,5 +192,8 @@ We may ascertain whether there is evidence to support the alternative hypothesis
 - Conclusion: The findings of the hypothesis test might be interpreted as follows: the null hypothesis is rejected because the obtained p-value (0.0000) is less than the significance level of 0.05. This suggests that the amount of time spent cooking and the average rating of recipes are significantly correlated. The two variables also have a weak negative link, as shown by the correlation coefficient of -0.0449, which means that as cooking time goes up, recipes' average ratings tend to go down a little.
 
 It is important to remember that correlation does not indicate causation, and that factors other than cooking time may have an impact on how well a recipe is rated. Therefore, more research would be required to establish the causal link between cooking time and recipe average ratings.
+
+## Hypothesis Testing
+Based on the results of the exploratory data analysis and hypothesis tests conducted in this project, we identified potential key variables that could be used to build a predictive model that predicts a player’s role based on their game statistics in a separate project. 
 
 
