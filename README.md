@@ -2,7 +2,7 @@
 # Does the cooking time of a recipe affect the average rating?
 A UCSD DSC 80 Project testing a dataset to see if cooking times affect the average rating.
 
-Contributors: [Jenna Canicosa](https://www.linkedin.com/in/jenna-canicosa/) and [Adalina Ma](https://www.linkedin.com/in/adalina-ma-bba89b24b/)
+Contributors: Jenna Canicosa and Adalina Ma
 
 
 ## Table of Contents
@@ -23,7 +23,7 @@ Contributors: [Jenna Canicosa](https://www.linkedin.com/in/jenna-canicosa/) and 
 Welcome to Recipe and Ratings Analysis! We used 2 datasets to conduct this analysis, one containing recipes and the other ratings from [Food.com](https://www.food.com/) last updated in 2008. The original recipes dataset held over 83,000 unique recipes and the ratings dataset held over 731,000 recipe reviews. With the large amount of data and information, there were many types of approaches to this project. **We decided to conduct our data analysis on checking if there is a correlation between cooking time and recipe ratings.** 
 
 ### Dataset Statistics and Definitions:
-As stated above, the original recipes dataset held over 83,000 unique recipes and the ratings dataset held over 731,000 recipe reviews. Below are the definitions of the columns we used from this dataset.
+As stated above, the original recipes dataset has a total of 83,782 unique recipes and the ratings dataset has a total of 731,927 recipe reviews. We merged the two datasets and cleaned it so it only includes the necessary columns for our analysis. Below are the definitions of the columns we used from this dataset.
 
 Recipes: Information found on [food.com](food.com)
 
@@ -134,14 +134,29 @@ It is worth noting that correlation does not imply causation, and other factors 
 ## Assessment of Missingness
 
 ### NMAR Analysis
-Using a permutation test, we can assume that the missing values in ‘rating’ are not missing at random (NMAR). There is no apparent pattern as to why the values are missing, the missingness is dependent on the missing value itself. A user may have simply forgotten to add a rating when writing a review. This means the missing data depends on the actual value of the missing point, making the missingness to be NMAR. To make the values of ‘ratings’ MAR, collecting more data related to the missingness mechanism such as obtaining the demographic of users could be a factor that explains the missingness in the ‘rating’ column. By collecting additional variables and if they are present for both missing and not missing ‘rating’ values, a permutation test can be used to impute the missing values to examine the correlation between the column values.
+Using a permutation test, we can assume that the missing values in ‘description’ are not missing at random (NMAR). There is no apparent pattern as to why the values are missing, the missingness is dependent on the missing value itself. All recipes should have description and the cleaned dataset had a total of 0.04% missing values in the ‘description’ column. This means the missing data depends on the actual value of the missing point, making the missingness to be NMAR. A potential explanation as to why this column contains missing values could be the description was To make the values of ‘description’ MAR, collecting more data related to the missingness mechanism such as obtaining the demographic of users could be a factor that explains the missingness in the ‘rating’ column. By collecting additional variables such as region the recipe is from, the missingness could depend on long descriptions from specific countries, making some recipes have descriptions.
+
 ### Missingness Dependency
-When taking a further look at the missing values, we noticed that the columns ‘names’, ‘description’, ‘user_id’, ‘date’, ‘rating’, ‘review’, and ‘avg_rating’ all contain missing values. We decided to investigate whether the missingness of ‘review’ corresponds to the missingness of ‘rating’.
+When taking a further look at the missing values, we noticed that the columns ‘description’, ‘rating’, and ‘review’’ all contain missing values. We decided to investigate whether the missingness of ‘rating’ corresponds to ‘n_steps’ in the case a user stray away from recipes with more steps.
 
-Null Hypothesis: Distribution of `'review'` when `'rating'` is missing is the same as the distribution of `'review'` when `'rating'` is not missing.
+Null Hypothesis: Distribution of `'n_steps'` when `'rating'` is missing is the same as the distribution of `'n_steps'` when `'rating'` is not missing.
 
-Alternative Hypothesis: Distribution of `'review'` when `'rating'` is missing is *not* the same as the distribution of `'review'` when `'rating'` is not missing.
+Alternative Hypothesis: Distribution of `'n_steps'` when `'rating'` is missing is *not* the same as the distribution of `'n_steps'` when `'rating'` is not missing.
 
-The graph below displays the distribution of `review` when `rating` is and is not missing.
+The bar chart below displays the distribution of `n_steps` when `rating` is missing. 
 
+<p style="text-align:center"><iframe src="assets/n_steps_distribution.html" width='100%' height=425 align='center' frameBorder=0></iframe></p>
+
+We performed a permutation test to determine whether or not the missingness of `rating` was dependent on `n_steps` using total variation distance (TVD) as the test statistic because ‘n_steps’ is qualitative. By the graphs below, the number of steps most recipes have falls within 1-23, meaning any recipe with a value over 23 is an outlier. To have even bins, we separated the number of steps into the bins  ['(0, 5]', '(5, 10]', '(10, 20]', '(20, 100]' so each bin contains a similar number of ratings. 
+
+<p style="text-align:center"><iframe src="assets/n_steps_probability_density.html" width='100%' height=425 align='center' frameBorder=0></iframe></p>
+
+
+<p style="text-align:center"><iframe src="assets/n_step_box.html" width='100%' height=425 align='center' frameBorder=0></iframe></p>
+
+The plot below displays the empirical distribution of the TVDs, with our observed TVD marked as a red vertical line.  
+
+<p style="text-align:center"><iframe src="assets/empirical_tvd.html" width='100%' height=425 align='center' frameBorder=0></iframe></p>
+
+By running a permutation test by comparing the observed TVD, the p-value result was 0. Since our p-value is less than the significance level of 0.05, it is likely that we reject the null hypothesis. We can assume that the missingness in `recipe` is dependent on `n_steps`.
 
