@@ -127,25 +127,33 @@ Description:
 ## Assessment of Missingness
 
 ### NMAR Analysis
-Using a permutation test, we can assume that the missing values in `'reviews'` are not missing at random (NMAR). There is no apparent pattern as to why the values are missing, the missingness is dependent on the missing value itself. All recipes should have description and the cleaned dataset had a total of 0.02% missing values in the `'reviews'` column. This means the missing data depends on the actual value of the missing point, making the missingness to be NMAR. A potential explanation as to why this column contains missing values could be a user leaves a rating but not a review. It is easy to make a rating from 1-5 but one can be lazy and not elaborate on the rating. To make the values of `'reviews'` MAR, collecting more data related to the missingness mechanism such as obtaining the age of a user could be a factor that explains the missingness in the `'rating'` column. By collecting additional variables, the missingness could depend on older folks leaving reviews but the younger generation only leaving ratings without reviews.
+Using a permutation test, we can assume that the missing values in `reviews` are not missing at random (NMAR). There is no apparent pattern as to why the values are missing, the missingness is dependent on the missing value itself. All recipes should have description and the cleaned dataset had a total of 0.02% missing values in the `reviews` column. This means the missing data depends on the actual value of the missing point, making the missingness to be NMAR. A potential explanation as to why this column contains missing values could be a user leaves a rating but not a review. It is easy to make a rating from 1-5 but one can be lazy and not elaborate on the rating. To make the values of `reviews` MAR, collecting more data related to the missingness mechanism such as obtaining the age of a user could be a factor that explains the missingness in the `rating` column. By collecting additional variables, the missingness could depend on older folks leaving reviews but the younger generation only leaving ratings without reviews.
 
 ### Missingness Dependency
-When taking a further look at the missing values, we noticed that the columns `'description'`, `'rating'`, and `'review'` all contain missing values. We decided to investigate whether the missingness of `'rating'` corresponds to `'n_steps'` in the case a user stray away from recipes with more steps.
+When taking a further look at the missing values, we noticed that the columns `description`, `rating`, and `review` all contain missing values. We decided to investigate whether the missingness of `rating` corresponds to `n_steps` in the case a user stray away from recipes with more steps.
 
-Null Hypothesis: Distribution of `'n_steps'` when `'rating'` is missing is the same as the distribution of `'n_steps'` when `'rating'` is not missing.
+Null Hypothesis: Distribution of `n_steps` when `rating` is missing is the same as the distribution of `n_steps` when `rating` is not missing.
 
-Alternative Hypothesis: Distribution of `'n_steps'` when `'rating'` is missing is *not* the same as the distribution of `'n_steps'` when `'rating'` is not missing.
+Alternative Hypothesis: Distribution of `n_steps` when `rating` is missing is *not* the same as the distribution of `n_steps` when `rating` is not missing.
 
 The bar chart below displays the distribution of `n_steps` when `rating` is missing. 
 
 <p style="text-align:center"><iframe src="assets/n_step_distribution.html" width='100%' height=425 align='center' frameBorder=0></iframe></p>
 
-We performed a permutation test to determine whether or not the missingness of `rating` was dependent on `n_steps` using total variation distance (TVD) as the test statistic because `'n_steps'` is qualitative. By the graphs below, the number of steps most recipes have falls within 1-23, meaning any recipe with a value over 23 is an outlier. To have even bins, we separated the number of steps into the bins  ['(0, 5]', '(5, 10]', '(10, 20]', '(20, 100]' so each bin contains a similar number of ratings. 
+We performed a permutation test to determine whether or not the missingness of `rating` was dependent on `n_steps` using total variation distance (TVD) as the test statistic because `n_steps` is qualitative. By the graphs below, the number of steps most recipes falls within 1-23, meaning any recipe with a value over 23 is an outlier. To have an even distribution through bins, we separated the number of steps into the bins  ['(0, 5]', '(5, 10]', '(10, 20]', '(20, 100]' so each bin contains a similar number of ratings. 
 
 <p style="text-align:center"><iframe src="assets/n_steps_probability_density.html" width='100%' height=425 align='center' frameBorder=0></iframe></p>
 
 
 <p style="text-align:center"><iframe src="assets/n_step_box.html" width='100%' height=425 align='center' frameBorder=0></iframe></p>
+
+The pivot table below illustrates the observed values.
+|   bins  |   False  | True     |
+|--------:|---------:|:---------|
+|  (0, 5] | 0.236033 | 0.192338 |   
+| (5, 10] | 0.398135 | 0.380819 |   
+| (10,20] | 0.308405 | 0.336792 |   
+|(20,100] | 0.057427 | 0.090051 |   
 
 The plot below displays the empirical distribution of the TVDs, with our observed TVD marked as a red vertical line.  
 
