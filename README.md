@@ -184,6 +184,8 @@ The correlation coefficient is also a commonly accepted metric for assessing the
 
 We may ascertain whether there is evidence to support the alternative hypothesis that there is a substantial correlation between cooking time and average rating by computing the correlation coefficient and comparing it to the null hypothesis of no association.
 
+<p style="text-align:center"><iframe src="assets/hypothesis.html" width='100%' height=435 align='center' frameBorder=0></iframe></p>
+
 **Results** 
 - P-value: 0.0
 - Correlation Coefficient: -0.0449
