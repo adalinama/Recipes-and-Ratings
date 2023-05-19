@@ -74,9 +74,6 @@ The first five rows of our dataframe are included below:
 | 10 calorie chocolate miracle noodle cookies      | 478546 | [2249984.0, 1802657711.0, 2000301575.0, 2000920973.0, 2001773359.0]                                              | [3.0, 3.0, 4.0, nan, nan]                               |        26 |      3.33333 |        30 |          2247203 |
 | 10 minute baked halibut with garlic butter sauce | 359203 | [4470.0, 90633.0, 653438.0, 369715.0, 242188.0, 1800042302.0, 1803231273.0]                                      | [5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0]                     |        16 |      5       |        35 |            37779 |
 
-<table border="1" class="dataframe" width='100%'> <thead>    <tr style="text-align: center;">      <th></th>      <th>name</th>      <th>id</th>      <th>user_id</th>      <th>ratings	</th>      <th>n_steps</th>      <th>avg_rating</th>      <th>minutes</th>    <th>contributor_id</th>    </tr>  </thead>  <tbody>    <tr>      <th>0</th>      <td>0 carb 0 cal gummy worms</td>      <td>283618</td>      <td>[824257.0, 871801.0, 2000269452.0, 2001637319.0, 1803681343.0]</td>      <td>[5.0, 4.0, 5.0, nan, 5.0]</td>      <td>15</td>      <td>4.75</td>      <td>45</td>     <td>134414</td>    </tr>    <tr>      <th>1</th>      <td>0 point soup ww</td>      <td>391705</td>      <td>[166642.0,1535.0,228458.0,464080.0,4470.0,1754326.0,204024.0,37779.0,2000225933.0]
-</td>      <td>[5.0, 5.0, 5.0, 5.0, 5.0, 4.0, 5.0, 4.0, 5.0]</td>      <td>5</td>      <td>4.777777777777778</td>      <td>55</td>     <td>39835</td>    </tr>    <tr>      <th>2</th>      <td>1 minute cake</td>      <td>290187</td>      <td>[227652.0,
- 693373.0, 646093.0, 765161.0, 879045.0, 872425.0, 213139.0, 299046.0, 1383715.0, 308765.0, 1993336.0]</td>      <td>[4.0, 4.0, 4.0, 4.0, 4.0, 5.0, 4.0, 5.0, 1.0, 4.0, 5.0]</td>      <td>20</td>      <td>4.0</td>      <td>2</td>    <td>584365</td>    </tr>    <tr>      <th>3</th>      <td>10 calorie chocolate miracle noodle cookies</td>      <td>478546</td>      <td>[2249984.0, 1802657711.0, 2000301575.0, 2000920973.0, 2001773359.0]</td>      <td>[3.0, 3.0, 4.0, nan, nan]</td>      <td>26</td>      <td>3.3333333333333335</td>      <td>16</td>    <td>2247203</td>    </tr>    <tr>      <th>4</th>      <td>10 minute baked halibut with garlic butter sauce</td>      <td>359203</td>      <td>[4470.0, 90633.0, 653438.0, 369715.0, 242188.0, 1800042302.0, 1803231273.0]</td>      <td>[5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0]</td>      <td>16</td>      <td>5.0</td>      <td>35</td>   <td>37779</td>    </tr>  </tbody></table>
 
 ### Univariate Analysis
 For our univariate analysis, we decided to focus on investigating the distribution if cooking time. We grouped by` minutes` to see the distribution within our dataset:
@@ -113,14 +110,24 @@ Explanation: The scatter plot displays the relationship between cooking time and
 |    2380 |     1511 | [5.0, 5.0, 5.0, 5.0, 5.0] |    196 |
 
 Description:
+The interesting aggregate presented in the pivot table calculates descriptive statistics on the ratings based on quartiles of the cooking time (`minutes`) of recipes that are under 120 `minutes`. The data is divided into four equal-sized groups based on the cooking time quartiles, and then descriptive statistics such as count, unique values, top rating, and frequency are calculated for each group.
 
-|   Count |
-|--------:|
-|       1 |
-|       0 |
-|      16 |
-|     190 |
-|    2683 |
+This analysis is significant because it enables us to look at how recipe `ratings` change when cooking times are varied. We can spot any patterns or trends in the ratings linked with various time intervals by splitting the recipes into quartiles based on cooking time. These details can shed light on how customers feel and what they prefer about recipes with different cooking times.
+
+From the output, we can observe several important pieces of information:
+
+1. `Count`: The number of recipes in each quartile indicates the distribution of recipes across different cooking time ranges. It helps us understand the relative frequency of recipes in each group.
+
+2. `Unique`: The number of unique rating values within each quartile gives an indication of the diversity of ratings. It suggests the range of ratings users have given to recipes within each cooking time range.
+
+3. `Top`: The top rating value within each quartile shows the highest-rated value observed in that group. It provides insight into the maximum rating achieved within each cooking time range.
+
+4. `Frequency`: The frequency column represents the number of occurrences of the most frequent rating within each quartile. It helps us identify the most common rating given to recipes in each cooking time range.
+
+We can learn a lot about the connection between cooking time and ratings by looking at these descriptive statistics. We can determine the diversity of ratings within each range, the rating values most frequently linked with particular cooking time intervals, and whether particular cooking time ranges tend to obtain higher or lower ratings.
+
+In conclusion, the intriguing aggregates explore the descriptive statistics inside quartiles to give a deeper insight of the relationship between cooking time and ratings. This study offers useful information for recipe selection and user preferences by revealing potential correlations or trends between these factors.
+
 
 Description:
 
