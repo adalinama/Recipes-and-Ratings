@@ -72,6 +72,9 @@ The first five rows of our dataframe are included below:
 ### Univariate Analysis
 For our univariate analysis, we decided to focus on investigating the distribution if cooking time. We grouped by` minutes` to see the distribution within our dataset:
 
+<p float = 'left'> 
+    <iframe src="assets/uni-fig-all.html" width='100%' height= 435 align='center' frameBorder=0></iframe>
+</p>
 
 This focuses on how recipes distribute cooking time. We can comprehend the frequency of various cooking time intervals and their distribution throughout the dataset by developing a histogram of cooking time. For example, our original dataset before cleaning informed us of the potential ouliers as shown above.
 
