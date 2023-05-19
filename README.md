@@ -93,13 +93,14 @@ This analysis is significant since it sheds light on how the recipes' total cook
 We then were able to make the decision of filtering out recipes that exceeded 120 minutes for a more workable dataset. We can see the distribution's form, the range of cooking durations, and the most typical cooking time intervals from the histogram. It enables us to determine whether the majority of recipes have short or lengthy cooking durations, whether the distribution has any notable peaks or gaps, and whether it is biased towards particular time periods.
 
 ### Bivariate Analysis
+For our bivariate analysis, we decided to focus on investigating the distribution of cooking time. We started by filtering out any recipe with less than 5 reviews. Then we grouped by `id` which puts all the data from a recipe together:
 <p style="text-align:center"><iframe src="assets/bivariate-plot-time.html" width='100%' height= 435 align='center' frameBorder=0></iframe></p>
 
-Explanation: The scatter plot displays the relationship between cooking time and the average rating of recipes. It helps identify any correlation or patterns between these variables.
+Explanation: The scatter plot displays the relationship between cooking time and the average rating of recipes. It helps identify any correlation or patterns between these variables. There seems to have a lot of high ratings with a low cooking time on the right bottom corner of the graph.
 
 <p style="text-align:center"><iframe src="assets/bivariate-plot-steps.html" width='100%' height=435 align='center' frameBorder=0></iframe></p>
 
-
+Explanation: This scatterplot explores the relationship between the number of steps and the cooking time of each recipe. A lot of the data tends to be on the left bottom corner, meaning there are a large number of recipes with a small number of steps and a short cooking time.
 
 ### Interesting Aggregates
 
