@@ -145,7 +145,7 @@ Alternative Hypothesis: Distribution of `'n_steps'` when `'rating'` is missing i
 
 The bar chart below displays the distribution of `n_steps` when `rating` is missing. 
 
-<p style="text-align:center"><iframe src="assets/n_steps_distribution.html" width='100%' height=425 align='center' frameBorder=0></iframe></p>
+<p style="text-align:center"><iframe src="assets/n_step_distribution.html" width='100%' height=425 align='center' frameBorder=0></iframe></p>
 
 We performed a permutation test to determine whether or not the missingness of `rating` was dependent on `n_steps` using total variation distance (TVD) as the test statistic because ‘n_steps’ is qualitative. By the graphs below, the number of steps most recipes have falls within 1-23, meaning any recipe with a value over 23 is an outlier. To have even bins, we separated the number of steps into the bins  ['(0, 5]', '(5, 10]', '(10, 20]', '(20, 100]' so each bin contains a similar number of ratings. 
 
