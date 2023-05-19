@@ -116,14 +116,14 @@ This analysis is significant because it enables us to look at how recipe `rating
 
 From the output, we can observe several important pieces of information:
 
-1. Count: The distribution of recipes over various cooking time ranges is shown by the number of recipes in each quartile. It aids in our comprehension of the relative frequency of each group's recipes.
+1. `Count`: The distribution of recipes over various cooking time ranges is shown by the number of recipes in each quartile. It aids in our comprehension of the relative frequency of each group's recipes.
 
-2. Unique: The variety of ratings is indicated by the number of unique rating values inside each quartile. It indicates the range of ratings that consumers have given to recipes for each range of cooking times.
+2. `Unique`: The variety of ratings is indicated by the number of unique rating values inside each quartile. It indicates the range of ratings that consumers have given to recipes for each range of cooking times.
 
 
-3. Top: The highest-rated value recorded in each quartile is represented by the top rating value within that quartile. It offers information on the highest rating attained during each range of cooking times.
+3. `Top`: The highest-rated value recorded in each quartile is represented by the top rating value within that quartile. It offers information on the highest rating attained during each range of cooking times.
 
-4. Frequency: The frequency column shows how many times the most prevalent rating occurred within each quadrant. It enables us to get the most typical grade for each cooking time for a given recipe.
+4. `Frequency`: The frequency column shows how many times the most prevalent rating occurred within each quadrant. It enables us to get the most typical grade for each cooking time for a given recipe.
 
 We can learn a lot about the connection between cooking time and ratings by looking at these descriptive statistics. We can determine the diversity of ratings within each range, the rating values most frequently linked with particular cooking time intervals, and whether particular cooking time ranges tend to obtain higher or lower ratings.
 
