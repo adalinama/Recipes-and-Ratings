@@ -122,7 +122,6 @@ From the output, we can observe several important pieces of information:
 
 2. `Unique`: The variety of ratings is indicated by the number of unique rating values inside each quartile. It indicates the range of ratings that consumers have given to recipes for each range of cooking times.
 
-
 3. `Top`: The highest-rated value recorded in each quartile is represented by the top rating value within that quartile. It offers information on the highest rating attained during each range of cooking times.
 
 4. `Frequency`: The frequency column shows how many times the most prevalent rating occurred within each quadrant. It enables us to get the most typical grade for each cooking time for a given recipe.
@@ -185,7 +184,7 @@ The test statistic for a hypothesis test needs to be sensitive to the alternativ
 
 The correlation coefficient is also a commonly accepted metric for assessing the relationship between continuous variables. It can be anything between -1 and +1, with -1 denoting a perfect negative correlation, +1 a perfect positive correlation, and 0 denoting no connection at all. The correlation coefficient's magnitude and sign both reveal the strength and direction of the link, respectively.
 
-We may ascertain whether there is evidence to support the alternative hypothesis that there is a substantial correlation between cooking time and average rating by computing the correlation coefficient and comparing it to the null hypothesis of no association.
+We may decide whether there is evidence to support the alternative hypothesis that there is a substantial correlation between cooking time and average rating by computing the correlation coefficient and comparing it to the null hypothesis of no association.
 
 <p style="text-align:center"><iframe src="assets/hypothesis.html" width='100%' height=435 align='center' frameBorder=0></iframe></p>
 
@@ -197,4 +196,4 @@ We may ascertain whether there is evidence to support the alternative hypothesis
 It is important to remember that correlation does not indicate causation, and that factors other than cooking time may have an impact on how well a recipe is rated. Therefore, more research would be required to establish the causal link between cooking time and recipe average ratings.
 
 ## Conclusion
-Through this project, we took 2 datasets, merged them, cleaned them and analyzed them. We explored what we learned in lecture by performing univariate analyses and bivariate analyses and aggression, explored NMAR values, and tested for missingness. To answer our main question, (does the cooking time of a recipe affect the average rating?) we performed a hypothesis test. We came conclusion to reject the null hypothesis, meaning there is a significant correlation between cooking time and average rating of recipes.
+Through this project, we took the 2 datasets recipe and ratings and merged them, cleaned them and analyzed them. We explored what we learned in lecture by performing univariate analyses and bivariate analyses and aggression, explored NMAR values, and tested for missingness. To answer our main question, (does the cooking time of a recipe affect the average rating?) we performed a hypothesis test. We came conclusion to reject the null hypothesis, meaning there is a significant correlation between cooking time and average rating of recipes.
