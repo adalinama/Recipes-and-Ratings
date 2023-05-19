@@ -149,7 +149,7 @@ We performed a permutation test to determine whether or not the missingness of `
 
 The pivot table below illustrates the observed values.
 |   bins  |   False  | True     |
-|--------:|---------:|:---------|
+|--------:|---------:|---------:|
 |  (0, 5] | 0.236033 | 0.192338 |   
 | (5, 10] | 0.398135 | 0.380819 |   
 | (10,20] | 0.308405 | 0.336792 |   
